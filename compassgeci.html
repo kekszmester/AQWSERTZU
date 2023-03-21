@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<p id="gyasz"></p>
+    <script>
+// Iránymérési funkció engedélyezése
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', function(event) {
+    var alpha = event.alpha;
+    document.getElementById("gyasz").innerHTML("Az eszköz " + alpha + " fokos irányba néz.");
+    console.log("Az eszköz " + alpha + " fokos irányba néz.");
+  }, false);
+} else {
+  console.log("Az eszköz nem támogatja az iránymérési funkciót.");
+}
+    </script>
+
+</body>
+</html>
